@@ -1,17 +1,19 @@
-# terraform-domain-concept
+# benniemosher-com-infra
 
-![CI Terraform](https://github.com/benniemosher-dev/terraform-module/actions/workflows/ci-terraform.yml/badge.svg)
+![CI Terraform](https://github.com/benniemosher-dev/bennemosher-com-infra/actions/workflows/ci-terraform.yml/badge.svg)
 
-🏕 A Terraform domain concept template. 🏕
-
-## ✅ TODO:
-
-Things to change when first creating a domain concept repository:
-
-- [ ] In `README.md` change `terraform-domain-concept` to the name of this module (i.e. `benniemosher-com-infra`, `moniquemosher-com-infra`)
-- [ ] In `README.md` delete the [TODO](README.md#todo) section
+🏗 Infrastructure to support the benniemosher.com domain concept. 🏗
 
 ## 📜 Usage:
+
+### To retrieve Cloudflare secrets:
+
+Reach out to [@benniemosher](https://keybase.io/benniemosher) on Keybase and get access to his secrets repo then:
+
+```bash
+git clone keybase://private/benniemosher/secrets
+ln -s $HOME/Code/personal/secrets/cloudflare.auto.tfvars ./cloudflare.auto.tfvars
+```
 
 - To install dependencies needed run:
   ```bash
@@ -80,16 +82,18 @@ Things to change when first creating a domain concept repository:
 ## 📋 Documentation
 
 <!-- BEGIN_TF_DOCS -->
-
 ## Requirements
 
-| Name                                                                     | Version |
-| ------------------------------------------------------------------------ | ------- |
-| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | ~> 1.3  |
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 3.0 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | 3.29.0 |
 
 ## Modules
 
@@ -97,14 +101,19 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [cloudflare_email_routing_catch_all.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/email_routing_catch_all) | resource |
+| [cloudflare_record.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
+| [cloudflare_zone.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/zone) | resource |
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_cloudflare-config"></a> [cloudflare-config](#input\_cloudflare-config) | The config to connect Terraform to Cloudflare | <pre>object({<br>    account-id = optional(string, null)<br>    api-token  = string<br>    cidrs      = list(string)<br>  })</pre> | n/a | yes |
 
 ## Outputs
 
 No outputs.
-
 <!-- END_TF_DOCS -->
