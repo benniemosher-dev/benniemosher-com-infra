@@ -7,6 +7,13 @@ terraform {
       version = "~> 3.0"
     }
   }
+
+  cloud {
+    organization = "benniemosher-dev"
+    workspaces {
+      name = "benniemosher-com-infra"
+    }
+  }
 }
 
 provider "cloudflare" {
