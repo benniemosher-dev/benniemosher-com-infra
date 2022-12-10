@@ -9,7 +9,7 @@ on:
 jobs:
   ci-terraform:
     name: Continuous Integration for Terraform
-    uses: "benniemosher-dev/.github/.github/workflows/ci-terraform.yml@bam%2Fenable-cloudflare-tfvars"
+    uses: "benniemosher-dev/.github/.github/workflows/ci-terraform.yml@bam/enable-cloudflare-tfvars"
     secrets:
       INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
     with:
