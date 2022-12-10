@@ -1,6 +1,6 @@
 # benniemosher-com-infra
 
-![CI Terraform](https://github.com/benniemosher-dev/bennemosher-com-infra/actions/workflows/ci-terraform.yml/badge.svg)
+![CI Terraform](https://github.com/benniemosher-dev/benniemosher-com-infra/actions/workflows/ci-terraform.yml/badge.svg)
 
 🏗 Infrastructure to support the benniemosher.com domain concept. 🏗
 
