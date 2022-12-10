@@ -11,6 +11,7 @@ jobs:
     name: Continuous Integration for Terraform
     uses: "benniemosher-dev/.github/.github/workflows/ci-terraform.yml@bam/enable-cloudflare-tfvars"
     secrets:
+      CLOUDFLARE_CONFIG: ${{ secrets.CLOUDFLARE_CONFIG }}
       INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
     with:
       enable-cloudflare-tfvars: true
